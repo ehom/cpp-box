@@ -16,7 +16,7 @@ find_roots.o: find_roots.cpp
 	$(GCC) -c find_roots.cpp $(GCC_OPTS)
 
 check:
-	echo "running make target 'check' ..."
+	find_roots
 
 distcheck:
 	echo "running make target 'distcheck' ..."
