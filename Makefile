@@ -17,6 +17,7 @@ find_roots.o: find_roots.cpp
 
 check:
 	./find_roots
+	make -C kth_most_frequent check
 
 distcheck:
 	echo "running make target 'distcheck' ..."
