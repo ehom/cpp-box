@@ -4,9 +4,10 @@
 
 GCC = g++
 GCC_OPTS = -std=c++11 -Wall -Wextra
-PROGRAMS = find_roots
+PROGRAMS = find_roots kth_most_frequent
 
 all: $(PROGRAMS)
+	make -C kth_most_frequent
 
 find_roots: find_roots.o
 	$(GCC) -o find_roots find_roots.o 
@@ -21,5 +22,6 @@ distcheck:
 	echo "running make target 'distcheck' ..."
 
 clean:
-	rm $(PROGRAMS) *.o
+	rm *.o
+	make -C kth_most_frequent clean
 
