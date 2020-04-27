@@ -6,7 +6,6 @@ using Roots = std::pair<double, double>;
 auto operator<<(std::ostream& o, const Roots& roots) -> std::ostream&;
 auto find_roots(double a, double b, double c) -> Roots;
 
-
 auto main() -> int {
 
     Roots roots = find_roots(2, 10, 8);
@@ -16,14 +15,12 @@ auto main() -> int {
     return 0;
 }
 
-
 auto operator<<(std::ostream& o, const Roots& roots) -> std::ostream& {
 
     o << roots.first << ", " << roots.second;
 
     return o;
 }
-
 
 auto find_roots(double a, double b, double c) -> Roots {
 
