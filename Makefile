@@ -15,7 +15,10 @@ find_roots.o: find_roots.cpp
 	$(GCC) -c find_roots.cpp $(GCC_OPTS)
 
 check:
-	echo "Nothing to check yet"
+	echo "running make target 'check' ..."
+
+distcheck:
+	echo "running make target 'distcheck' ..."
 
 clean:
 	rm $(PROGRAMS) *.o
