@@ -1,23 +1,40 @@
 #include <iostream>
 #include <cmath>
 
-std::pair<double, double> findRoots(double a, double b, double c)
-{
-    std::pair<double, double> result;
+using Roots = std::pair<double, double>;
 
-    // pre-compute parts of the equation
-    double sqrt_result = std::sqrt(b*b - 4*a*c);
-    double divisor = 2 * a;
+auto operator<<(std::ostream& o, const Roots& roots) -> std::ostream&;
+auto find_roots(double a, double b, double c) -> Roots;
 
-    result.first = (-b + sqrt_result) / divisor;
-    result.second = (-b - sqrt_result) / divisor;
 
-    return result;
+auto main() -> int {
+
+    Roots roots = find_roots(2, 10, 8);
+
+    std::cout << roots << std::endl;
+
+    return 0;
 }
 
-int main() 
-{
-    std::pair<double, double> roots = findRoots(2, 10, 8);
-    std::cout << roots.first << std::endl;
-    std::cout << roots.second << std::endl;
+
+auto operator<<(std::ostream& o, const Roots& roots) -> std::ostream& {
+
+    o << roots.first << ", " << roots.second;
+
+    return o;
+}
+
+
+auto find_roots(double a, double b, double c) -> Roots {
+
+    // Pre-compute parts of the equation
+    double sqrt_result = std::sqrt(b * b - 4 * a * c);
+    double divisor = 2 * a;
+
+    Roots roots;
+
+    roots.first = (-b + sqrt_result) / divisor;
+    roots.second = (-b - sqrt_result) / divisor;
+
+    return roots;
 }
