@@ -14,6 +14,9 @@ find_roots: find_roots.o
 find_roots.o: find_roots.cpp
 	$(GCC) -c find_roots.cpp $(GCC_OPTS)
 
+check:
+	echo "Nothing to check yet"
+
 clean:
 	rm $(PROGRAMS) *.o
 
